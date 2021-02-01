@@ -4,13 +4,13 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface Controller<DTO, Form, Filter> {
-    Flux<DTO> filter(Filter filter);
+  Flux<DTO> filter(Filter filter);
 
-    Mono<DTO> create(Form form);
+  Mono<DTO> create(Form form);
 
-    Mono<DTO> get(String id);
+  Mono<DTO> get(String id);
 
-    default Mono<DTO> update(String id, Form form) {
-        throw new UnsupportedOperationException();
-    }
+  default Mono<DTO> update(String id, Form form) {
+    throw new UnsupportedOperationException();
+  }
 }
